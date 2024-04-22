@@ -5,6 +5,7 @@ stop:
 	minikube stop -p multinode-demo
 
 run:
+	kubectl apply -f "kubernetes-namespace/namespace.yaml" 
 	kubectl apply -f "kubernetes-prometheus/*.yaml"
 	kubectl apply -f "kubernetes-node-exporter/*.yaml"
 	kubectl apply -f "kube-state-metrics-configs/*.yaml"
@@ -28,3 +29,4 @@ delete:
 	kubectl delete -f "kubernetes-grafana/*.yaml"
 	kubectl delete -f "otel-collector/*.yaml"
 	kubectl delete -f "kubernetes-alertmanager/*.yaml"
+	kubectl delete -f "kubernetes-namespace/namespace.yaml"
