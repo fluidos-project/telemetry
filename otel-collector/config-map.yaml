@@ -86,6 +86,8 @@ data:
               # Host name
               - source_labels: [__meta_kubernetes_node_name]
                 target_label: instance
+              - source_labels: [__meta_kubernetes_node_address_InternalIP]
+                target_label: ip_address
             - job_name: integrations/kubernetes/cadvisor
               bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
               kubernetes_sd_configs:
