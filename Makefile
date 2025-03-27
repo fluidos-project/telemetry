@@ -28,5 +28,5 @@ delete:
 	kubectl delete -f "kube-state-metrics-configs/*.yaml"
 	kubectl delete -f "kubernetes-grafana/*.yaml"
 	kubectl delete -f "otel-collector/*.yaml"
-	kubectl delete -f "otel-agent/*.yaml"
+	# kubectl delete -f "otel-agent/*.yaml"
 	# kubectl delete -f "kubernetes-alertmanager/*.yaml"
