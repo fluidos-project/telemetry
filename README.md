@@ -87,6 +87,7 @@ This project has been tested with minikube (https://minikube.sigs.k8s.io/docs/st
 - In the Makefile there is a shortcut to do the same: ```make start```
 
 ### Starting the services
+**git clone --recurse-submodules https://github.com/fluidos-project/telemetry.git**
 In order to run the services, we need to apply all the configurations. There is another shortcut in the Makefile: ```make run```. Using this command will provide the infrastructure with the followings components:
 - Prometheus
 - Node Exporter
