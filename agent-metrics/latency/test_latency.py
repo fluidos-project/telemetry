@@ -1,7 +1,7 @@
 import requests
 
 # Define the base URL of the API
-BASE_URL = "http://127.0.0.1:8000"
+BASE_URL = "http://127.0.0.1:8001"
 
 # Test data for adding a cluster
 test_cluster = {"domain": "UMU", "cluster": "UMU", "node_ip": "10.208.99.106"}

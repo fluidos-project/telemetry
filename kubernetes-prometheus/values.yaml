@@ -25,7 +25,7 @@ alertmanager:
       receivers:
       - name: 'webhook-receiver'
         webhook_configs:
-            - url: 'http://10.208.99.106:5000/alert'  #send to a deceision engine or event-handler the alert
+            - url: 'http://10.208.99.102:5000/alert'  #send to a deceision engine or event-handler the alert
              
   service:
     type: NodePort
@@ -58,6 +58,8 @@ prometheus:
     serviceMonitorSelectorNilUsesHelmValues: false
     podMonitorSelectorNilUsesHelmValues: false
     enableRemoteWriteReceiver: true
+    maximumStartupDurationSeconds: 120
+
     # Enable PVC
     # storageSpec:
     #   volumeClaimTemplate:

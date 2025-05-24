@@ -51,7 +51,7 @@ def ping_node(node_ip):
 def get_current_latency(_: CallbackOptions):
     for cluster_remote in cluster_list:
         latency = ping_node(cluster_remote["node_ip"])
-        attributes = {"from_node": CLUSTER, "to_cluster": cluster_remote["cluster"], "from_node": SOURCE_IP, "to_node": cluster_remote["node_ip"]}
+        attributes = {"from_node": CLUSTER, "to_cluster": cluster_remote["cluster"], "from_node": SOURCE_IP, "to_node": cluster_remote["node_ip"], "container_id": "testing"}
         if latency is not None:
             yield Observation(latency, attributes)
 
