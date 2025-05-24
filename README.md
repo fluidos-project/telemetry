@@ -74,6 +74,7 @@ Furthermore, the Security Agent can utilize this data to develop robust policies
 ### Prerequisites
 - A Kubernetes environment (This deployment has been done with minikube)
 - Python (This project has been tested with version 3.11.1)
+- Add Prometheus-community helm repo chart. (helm repo add prometheus-community https://prometheus-community.github.io/helm-charts)
   - prometheus-api-client (As specified in api/requirements.txt)
 
 ### Minikube
