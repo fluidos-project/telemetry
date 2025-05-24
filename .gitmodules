@@ -1,0 +1,3 @@
+[submodule "plugin-api-otel"]
+	path = plugin-api-otel
+	url = https://github.com/fluidos-project/plugin-api-otel.git
