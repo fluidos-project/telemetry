@@ -28,4 +28,3 @@ delete:
 	kubectl delete -f "kubernetes-grafana/*.yaml"
 	kubectl delete -f "otel-collector/*.yaml"
 	kubectl delete -f "plugin-api-otel/k8s/*.yaml"
-
