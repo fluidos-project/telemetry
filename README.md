@@ -74,6 +74,7 @@ Furthermore, the Security Agent can utilize this data to develop robust policies
 ### Prerequisites
 - A Kubernetes environment (This deployment has been done with minikube)
 - Python (This project has been tested with version 3.11.1)
+- Add Prometheus-community helm repo chart. (helm repo add prometheus-community https://prometheus-community.github.io/helm-charts)
   - prometheus-api-client (As specified in api/requirements.txt)
 
 ### Minikube
@@ -86,6 +87,7 @@ This project has been tested with minikube (https://minikube.sigs.k8s.io/docs/st
 - In the Makefile there is a shortcut to do the same: ```make start```
 
 ### Starting the services
+**git clone --recurse-submodules https://github.com/fluidos-project/telemetry.git**
 In order to run the services, we need to apply all the configurations. There is another shortcut in the Makefile: ```make run```. Using this command will provide the infrastructure with the followings components:
 - Prometheus
 - Node Exporter
@@ -122,3 +124,10 @@ The rules are already defined in kubernetes-prometheus/config-map.yaml in the pr
 
 ### Stopping the demo
 Using ```make delete``` will delete all the deployments, services... and ```make stop``` will stop minikube.
+
+## How to send custom metrics
+
+In the forlder example-api you can find different ways to send metrics: via http, grpc and with a simple file (batter_metrics.prom). If the file is stored in 
+/var/lib/node_exporter/textfile_collector/*.prom, node-exporter will take those metrics and send them to the OTEL-COLLECTOR.
+
+Take into account that the COLLECTOR (OpenTelemetry) ENDPOINT its the IP:30807. The port is booked using NodePort.
